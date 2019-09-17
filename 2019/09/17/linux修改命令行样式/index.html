@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | southwind</title>
+  <title>linux修改命令行样式 | southwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="southwind">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="Ps1要修改linux终端命令行颜色，我们需要用到PS1，PS1是Linux终端用户的一个环境变量，用来说明命令行提示符的设置。在终端输入命令：#set，即可在输出中找到关于PS1的定义如下： 　　PS1=’[\u@\h \W]$ ‘ 　　PS1的定义中个常用的参数的含义如下： 　　\d ：#代表日期，格式为weekday month date，例如：”Mon Aug 1”    　　\H ：#完">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux修改命令行样式">
+<meta property="og:url" content="http://yoursite.com/2019/09/17/linux修改命令行样式/index.html">
 <meta property="og:site_name" content="southwind">
+<meta property="og:description" content="Ps1要修改linux终端命令行颜色，我们需要用到PS1，PS1是Linux终端用户的一个环境变量，用来说明命令行提示符的设置。在终端输入命令：#set，即可在输出中找到关于PS1的定义如下： 　　PS1=’[\u@\h \W]$ ‘ 　　PS1的定义中个常用的参数的含义如下： 　　\d ：#代表日期，格式为weekday month date，例如：”Mon Aug 1”    　　\H ：#完">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019091717360927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-09-17T09:42:30.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="southwind">
+<meta name="twitter:title" content="linux修改命令行样式">
+<meta name="twitter:description" content="Ps1要修改linux终端命令行颜色，我们需要用到PS1，PS1是Linux终端用户的一个环境变量，用来说明命令行提示符的设置。在终端输入命令：#set，即可在输出中找到关于PS1的定义如下： 　　PS1=’[\u@\h \W]$ ‘ 　　PS1的定义中个常用的参数的含义如下： 　　\d ：#代表日期，格式为weekday month date，例如：”Mon Aug 1”    　　\H ：#完">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019091717360927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="southwind" type="application/atom+xml">
   
@@ -151,124 +157,210 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-linux修改命令行样式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      linux修改命令行样式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/17/linux修改命令行样式/" class="archive-article-date">
+
+        
+        <a href="/2019/09/17/linux修改命令行样式/" class="archive-article-date">
   	<time datetime="2019-09-17T09:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/linux修改命令行样式/">linux修改命令行样式</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Ps1"><a href="#Ps1" class="headerlink" title="Ps1"></a>Ps1</h2><p>要修改linux终端命令行颜色，我们需要用到PS1，PS1是Linux终端用户的一个环境变量，用来说明命令行提示符的设置。在终端输入命令：#set，即可在输出中找到关于PS1的定义如下：</p>
+<p>　　PS1=’[\u@\h \W]$ ‘</p>
+<p>　　PS1的定义中个常用的参数的含义如下：</p>
+<p>　　\d ：#代表日期，格式为weekday month date，例如：”Mon Aug 1”   </p>
+<p>　　\H ：#完整的主机名称   </p>
+<p>　　\h ：#仅取主机的第一个名字  </p>
+<p>　　\t ：#显示时间为24小时格式，如：HH：MM：SS   </p>
+<p>　　\T ：#显示时间为12小时格式   </p>
+<p>　　\A ：#显示时间为24小时格式：HH：MM   </p>
+<p>　　\u ：#当前用户的账号名称   </p>
+<p>　　\v ：#BASH的版本信息   </p>
+<p>　　\w ：#完整的工作目录名称   </p>
+<p>　　\W ：#利用basename取得工作目录名称，所以只会列出最后一个目录   </p>
+<p>　　# ：#下达的第几个命令   </p>
+<p>　　$ ：#提示字符，如果是root时，提示符为：# ，普通用户则为：$  </p>
+<p>　　由此，我们可知linux默认的命令行提示信息为：[当前用户的账号名称@主机的第一个名字 工作目录的最后一项]#</p>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>　　在PS1中设置字符颜色的格式为：[\e[F;Bm]，其中“F“为字体颜色，编号为30-37，“B”为背景颜色，编号为40-47。颜色表如下：</p>
+<p>　　　　F        B</p>
+<p>　　　　30      40      黑色   </p>
+<p>　　　　31      41      红色   </p>
+<p>　　　　32      42      绿色   </p>
+<p>　　　　33      43      黄色   </p>
+<p>　　　　34      44      蓝色   </p>
+<p>　　　　35      45      紫红色   </p>
+<p>　　　　36      46      青蓝色   </p>
+<p>　　　　37      47      白色  　　<br>　　根据颜色表，套用入字符颜色设置格式中，就可以对linux终端命令行颜色进行个性化设置了。比如要设置命令行的格式为绿字黑底，显示当前用户的账号名称、主机的第一个名字、完整的当前工作目录名称、24小时格式时间，就可以使用如下的命令：</p>
+<p>　　#PS1=’[[\e[32;40m]\u@\h \w \t]$ ‘</p>
+<h2 id="修改-bashrc文件"><a href="#修改-bashrc文件" class="headerlink" title="修改.bashrc文件"></a>修改.bashrc文件</h2><p>可以在控制台中直接输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>打开.bashrc在里面直接修改<br>这是我的修改，修改后按ese输入<code>：wq</code>保存退出。<br>让后重启终端窗口就行啦。<br><img src="https://img-blog.csdnimg.cn/2019091717360927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/17/linux修改命令行样式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/08/测试/" class="archive-article-date">
-  	<time datetime="2019-09-08T07:37:45.493Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/08/我的第一篇博客/" class="archive-article-date">
-  	<time datetime="2019-09-08T02:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/08/我的第一篇博客/">我的第一篇博客</a>
-    </h1>
   
+    <a href="/2019/09/08/测试/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/08/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-08T01:45:39.546Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ps1"><span class="toc-number">1.</span> <span class="toc-text">Ps1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色"><span class="toc-number">2.</span> <span class="toc-text">颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-bashrc文件"><span class="toc-number">3.</span> <span class="toc-text">修改.bashrc文件</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/08/hello-world/">Hello World</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/09/17/linux修改命令行样式/", 
+    sourceId: "linux修改命令行样式",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -292,8 +384,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
