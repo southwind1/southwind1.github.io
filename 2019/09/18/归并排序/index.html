@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>归并排序 | southwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.算法设计二路归并排序采用分而制之的方法，先将其一步步拆分{2 5 3 6 1 4 7 8}   –先通过mergesort将数组拆分为单个元素{2 5 3 6 }{1 4 7 8 }{2 5 } {3 6} {1 4} {7 8}{2}{5}{3}{6}{1}{4}{7}{8}{2 5} {3 6} {1 4} {7 8}    –然后在通过merge合并{2 3 5 6} {1 4 7 8">
+  <meta name="description" content="1.算法设计**二路归并排序采用分而制之的方法，先将其一步步拆分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="归并排序">
 <meta property="og:url" content="http://yoursite.com/2019/09/18/归并排序/index.html">
 <meta property="og:site_name" content="southwind">
-<meta property="og:description" content="1.算法设计二路归并排序采用分而制之的方法，先将其一步步拆分{2 5 3 6 1 4 7 8}   –先通过mergesort将数组拆分为单个元素{2 5 3 6 }{1 4 7 8 }{2 5 } {3 6} {1 4} {7 8}{2}{5}{3}{6}{1}{4}{7}{8}{2 5} {3 6} {1 4} {7 8}    –然后在通过merge合并{2 3 5 6} {1 4 7 8">
+<meta property="og:description" content="1.算法设计**二路归并排序采用分而制之的方法，先将其一步步拆分">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190918171032214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-09-18T09:12:37.144Z">
+<meta property="og:updated_time" content="2019-09-18T10:49:35.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="归并排序">
-<meta name="twitter:description" content="1.算法设计二路归并排序采用分而制之的方法，先将其一步步拆分{2 5 3 6 1 4 7 8}   –先通过mergesort将数组拆分为单个元素{2 5 3 6 }{1 4 7 8 }{2 5 } {3 6} {1 4} {7 8}{2}{5}{3}{6}{1}{4}{7}{8}{2 5} {3 6} {1 4} {7 8}    –然后在通过merge合并{2 3 5 6} {1 4 7 8">
+<meta name="twitter:description" content="1.算法设计**二路归并排序采用分而制之的方法，先将其一步步拆分">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190918171032214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="southwind" type="application/atom+xml">
@@ -177,8 +177,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h2 id="1-算法设计"><a href="#1-算法设计" class="headerlink" title="1.算法设计"></a>1.算法设计</h2><p><strong>二路归并排序采用分而制之的方法，先将其一步步拆分<br>{2 5 3 6 1 4 7 8}   –先通过mergesort将数组拆分为单个元素<br>{2 5 3 6 }{1 4 7 8 }<br>{2 5 } {3 6} {1 4} {7 8}<br>{2}{5}{3}{6}{1}{4}{7}{8}<br>{2 5} {3 6} {1 4} {7 8}    –然后在通过merge合并<br>{2 3 5 6} {1 4 7 8}<br>{1 2 3 4 5 6 7 8}</strong></p>
+        <h2 id="1-算法设计"><a href="#1-算法设计" class="headerlink" title="1.算法设计"></a>1.算法设计</h2><p>**二路归并排序采用分而制之的方法，先将其一步步拆分</p>
+<a id="more"></a>
+<p>{2 5 3 6 1 4 7 8}   –先通过mergesort将数组拆分为单个元素<br>{2 5 3 6 }{1 4 7 8 }<br>{2 5 } {3 6} {1 4} {7 8}<br>{2}{5}{3}{6}{1}{4}{7}{8}<br>{2 5} {3 6} {1 4} {7 8}    –然后在通过merge合并<br>{2 3 5 6} {1 4 7 8}<br>{1 2 3 4 5 6 7 8}**</p>
 <h3 id="Mergesort算法"><a href="#Mergesort算法" class="headerlink" title="Mergesort算法"></a>Mergesort算法</h3><p>void mergesort(int a[],int i,int j){      //i指向left  j指向high<br>    int m;<br>    if(i!=j){<br>        m=(i+j)/2;<br>        mergesort(a,i,m);//递归调用mergesort<br>        mergesort(a,m+1,j);// 递归调用mergesort<br>        merge(a,i,j,m);//归并数组<br>}<br>}</p>
 <h3 id="归并算法："><a href="#归并算法：" class="headerlink" title="归并算法："></a>归并算法：</h3><p>void merge(int a[],int i,int j,int m)<br>{<br>    //创建一个辅助数组help<br>    int <em>help = (int *)malloc((j-i+1)</em>sizeof(int));//辅助数组长度等于a<br>    int p1=i;<br>    int p2=m+1;<br>    while(p1&lt;=m&amp;&amp;p2&lt;=j){<br>        help[i++]=a[p1]&lt;a[p2]?a[p1++]:a[p2++];//将左右区域较小元素放进help，有可能有的区域没有完全放入help<br>}<br>//下面两个循环只能运行一个，<br>while(p1&lt;=m){<br>        help[i++]=a[p1++];<br>}<br>while(p2&lt;=j){<br>        help[i++]=a[p2++];<br>}<br>for(int n=0;n&lt;;n++){      //将help中的数据copy到a中<br>    a[n]=help[n];<br>}<br>}</p>
 <h2 id="2-程序清单"><a href="#2-程序清单" class="headerlink" title="2.程序清单"></a>2.程序清单</h2><pre><code>#include&lt;cstdio&gt;
