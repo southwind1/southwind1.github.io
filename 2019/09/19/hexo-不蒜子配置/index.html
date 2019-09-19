@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>hexo 不蒜子配置 | southwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不蒜子访问量统计layout_partial\header.ejs页面中引入busuanzi.js:12&amp;lt;script async src=&amp;quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  显示站点总访问量在layout_partial\header.ejs文件&amp;">
+  <meta name="description" content="不蒜子访问量统计">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 不蒜子配置">
 <meta property="og:url" content="http://yoursite.com/2019/09/19/hexo-不蒜子配置/index.html">
 <meta property="og:site_name" content="southwind">
-<meta property="og:description" content="不蒜子访问量统计layout_partial\header.ejs页面中引入busuanzi.js:12&amp;lt;script async src=&amp;quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  显示站点总访问量在layout_partial\header.ejs文件&amp;">
+<meta property="og:description" content="不蒜子访问量统计">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T08:18:12.119Z">
+<meta property="og:updated_time" content="2019-09-19T08:23:00.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 不蒜子配置">
-<meta name="twitter:description" content="不蒜子访问量统计layout_partial\header.ejs页面中引入busuanzi.js:12&amp;lt;script async src=&amp;quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  显示站点总访问量在layout_partial\header.ejs文件&amp;">
+<meta name="twitter:description" content="不蒜子访问量统计">
   
     <link rel="alternative" href="/atom.xml" title="southwind" type="application/atom+xml">
   
@@ -190,11 +190,15 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="不蒜子访问量统计"><a href="#不蒜子访问量统计" class="headerlink" title="不蒜子访问量统计"></a>不蒜子访问量统计</h3><h4 id="layout-partial-header-ejs页面中引入busuanzi-js"><a href="#layout-partial-header-ejs页面中引入busuanzi-js" class="headerlink" title="layout_partial\header.ejs页面中引入busuanzi.js:"></a>layout_partial\header.ejs页面中引入busuanzi.js:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="不蒜子访问量统计"><a href="#不蒜子访问量统计" class="headerlink" title="不蒜子访问量统计"></a>不蒜子访问量统计</h3><a id="more"></a>
+<p>layout_partial\header.ejs页面中引入busuanzi.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="显示站点总访问量"><a href="#显示站点总访问量" class="headerlink" title="显示站点总访问量"></a>显示站点总访问量</h3><h4 id="在layout-partial-header-ejs文件-lt-partial-‘post-tag’-gt-下面增加："><a href="#在layout-partial-header-ejs文件-lt-partial-‘post-tag’-gt-下面增加：" class="headerlink" title="在layout_partial\header.ejs文件&lt;%- partial(‘post/tag’) %&gt;下面增加："></a>在layout_partial\header.ejs文件&lt;%- partial(‘post/tag’) %&gt;下面增加：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</span><br><span class="line">    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="显示站点总访问量"><a href="#显示站点总访问量" class="headerlink" title="显示站点总访问量"></a>显示站点总访问量</h3><p> 在layout_partial\header.ejs文件&lt;%- partial(‘post/tag’) %&gt;下面增加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</span><br><span class="line">    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="显示单页面访问量"><a href="#显示单页面访问量" class="headerlink" title="显示单页面访问量"></a>显示单页面访问量</h3><h4 id="在layout-partial-article-ejs文件标签后面增加："><a href="#在layout-partial-article-ejs文件标签后面增加：" class="headerlink" title="在layout_partial\article.ejs文件标签后面增加："></a>在layout_partial\article.ejs文件<div class="footer-left"><div>标签后面增加：</div></div></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;</span><br><span class="line">  本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="显示单页面访问量"><a href="#显示单页面访问量" class="headerlink" title="显示单页面访问量"></a>显示单页面访问量</h3><p>在layout_partial\article.ejs文件<div class="footer-left"><div>标签后面增加：</div></div></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;</span><br><span class="line">  本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="如果你配置完成后没有显示次数可能是"><a href="#如果你配置完成后没有显示次数可能是" class="headerlink" title="如果你配置完成后没有显示次数可能是"></a>如果你配置完成后没有显示次数可能是</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">大家好，因七牛强制过期原有的『dn-lbstatics.qbox.me』域名（预计2018年10月初），</span><br><span class="line">与客服沟通数次无果，即使我提出为此付费也不行，只能更换域名到『busuanzi.ibruce.info』！</span><br><span class="line">因我是最早的一批七牛用户，为七牛至少带来了数百个邀请用户，很痛心，很无奈！</span><br><span class="line">各位继续使用不蒜子提供的服务，只需把原有的：</span><br><span class="line">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">域名改一下即可：</span><br><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">只需要修改该js域名，其他均未改变。若有疑问，可以加入不蒜子交流QQ群：`419260983`，</span><br><span class="line">对您带来的不便，非常抱歉！！！还是那句话，不蒜子不会中断服务！！！！</span><br></pre></td></tr></table></figure>
 
@@ -336,7 +340,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#不蒜子访问量统计"><span class="toc-number">1.</span> <span class="toc-text">不蒜子访问量统计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#layout-partial-header-ejs页面中引入busuanzi-js"><span class="toc-number">1.1.</span> <span class="toc-text">layout_partial\header.ejs页面中引入busuanzi.js:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示站点总访问量"><span class="toc-number">2.</span> <span class="toc-text">显示站点总访问量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在layout-partial-header-ejs文件-lt-partial-‘post-tag’-gt-下面增加："><span class="toc-number">2.1.</span> <span class="toc-text">在layout_partial\header.ejs文件&lt;%- partial(‘post/tag’) %&gt;下面增加：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示单页面访问量"><span class="toc-number">3.</span> <span class="toc-text">显示单页面访问量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在layout-partial-article-ejs文件标签后面增加："><span class="toc-number">3.1.</span> <span class="toc-text">在layout_partial\article.ejs文件标签后面增加：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果你配置完成后没有显示次数可能是"><span class="toc-number">4.</span> <span class="toc-text">如果你配置完成后没有显示次数可能是</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#不蒜子访问量统计"><span class="toc-number">1.</span> <span class="toc-text">不蒜子访问量统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示站点总访问量"><span class="toc-number">2.</span> <span class="toc-text">显示站点总访问量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示单页面访问量"><span class="toc-number">3.</span> <span class="toc-text">显示单页面访问量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果你配置完成后没有显示次数可能是"><span class="toc-number">4.</span> <span class="toc-text">如果你配置完成后没有显示次数可能是</span></a></li></ol>
                     </div>
                 </span>
             </div>
