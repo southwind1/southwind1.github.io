@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | southwind</title>
+  <title>利用单链表构建通讯录 | southwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="southwind">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用单链表构建通讯录">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/利用单链表构建通讯录/index.html">
 <meta property="og:site_name" content="southwind">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-06T09:46:19.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="southwind">
+<meta name="twitter:title" content="利用单链表构建通讯录">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
   
     <link rel="alternative" href="/atom.xml" title="southwind" type="application/atom+xml">
   
@@ -164,300 +168,186 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-利用单链表构建通讯录" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      利用单链表构建通讯录
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/利用单链表构建通讯录/" class="archive-article-date">
+
+        
+        <a href="/2019/10/06/利用单链表构建通讯录/" class="archive-article-date">
   	<time datetime="2019-10-06T09:45:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/利用单链表构建通讯录/">利用单链表构建通讯录</a>
-    </h1>
-  
+        
+        <span id="busuanzi_container_page_pv">   阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;conio.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">#define OK 1</span><br><span class="line">#define ERROR 0</span><br><span class="line">typedef int status;</span><br><span class="line">typedef struct   friends   //定义的数组</span><br><span class="line">&#123;</span><br><span class="line">	char   name[100];</span><br><span class="line">	char   sex[100];</span><br><span class="line">	char   tel[100];</span><br><span class="line">	char   addr[100];</span><br><span class="line">&#125;frd;</span><br><span class="line">typedef frd message;</span><br><span class="line">typedef struct LNode</span><br><span class="line">&#123;</span><br><span class="line">	frd data;</span><br><span class="line">	struct LNode *next;</span><br><span class="line">&#125;LNode,*LinkList;//通讯录节点</span><br><span class="line"></span><br><span class="line">/*void sort(LinkList L,LinkList p)//直接插入排序</span><br><span class="line">&#123;</span><br><span class="line">	LinkList pre,q;</span><br><span class="line">	q=p;</span><br><span class="line">	while(q!=NULL)&#123;</span><br><span class="line">		pre=L;</span><br><span class="line">		while(pre-&gt;next!=NULL&amp;&amp;strcmp(Pre-&gt;next-&gt;data.name,q-&gt;data.name)&lt;=0)</span><br><span class="line">			pre=pre-&gt;next;</span><br><span class="line">		q-&gt;next=pre-&gt;next;</span><br><span class="line">		pre-&gt;next=q;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int menu_select()//功能选择框</span><br><span class="line">&#123;</span><br><span class="line">	char c;</span><br><span class="line">	do</span><br><span class="line">	&#123;</span><br><span class="line">		system(&quot;cls&quot;);</span><br><span class="line">		printf(&quot;\n\t\t**********通讯录管理系统**********\n&quot;);</span><br><span class="line">		printf(&quot;\t\t┌-------------------------------┐\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        1.信息导入             │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        2.添加联系人           │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        3.查询联系人           │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        4.删除联系人           │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        5.修改联系人信息       │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        6.输出联系人列表       │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        7.写入文件             │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        8.读取文件             │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│        0.退出                 │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t└-------------------------------┘\n&quot;);</span><br><span class="line">		printf(&quot;\t\t请您选择(0-8):&quot;);    </span><br><span class="line">		c=getchar();</span><br><span class="line">	&#125;while(c&lt;&apos;0&apos;||c&gt;&apos;8&apos;);//检查输入是否符合规范</span><br><span class="line">	return(c-&apos;0&apos;);//返回c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//FILE *fp;</span><br><span class="line"></span><br><span class="line">status InitList(LinkList &amp;L)&#123;</span><br><span class="line">	//构造一个空的单链表</span><br><span class="line">	L=new LNode;</span><br><span class="line">	L-&gt;next=NULL;</span><br><span class="line">	return OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void read(LinkList &amp;L)     //打印所有的通讯录的人的信息</span><br><span class="line">&#123;</span><br><span class="line">	char   name[100];</span><br><span class="line">	char   sex[100];</span><br><span class="line">	char   tel[100];</span><br><span class="line">	char   addr[100];</span><br><span class="line">	char file[10];</span><br><span class="line">	LinkList temp;</span><br><span class="line">	int flag=0,flag2=0;</span><br><span class="line">	printf(&quot;请输入文件名：&quot;);</span><br><span class="line">	scanf(&quot;%s&quot;,file);</span><br><span class="line">	FILE *fp;//文件指针</span><br><span class="line">    fp=fopen(file,&quot;r&quot;);//fp指向文件开头</span><br><span class="line">	if(fp==NULL)&#123;//判断文件是否为空</span><br><span class="line">		printf(&quot;%s文件不存在！ \n&quot;,file);</span><br><span class="line">		exit(0);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n\n********************************欢迎使用通讯录*******************************************\n&quot;);</span><br><span class="line">	printf(&quot;姓名\t性别\t电话号码\t工作单位\n&quot;);</span><br><span class="line">	while(!feof(fp))//给L第一个值</span><br><span class="line">	&#123;</span><br><span class="line">		flag2 = 0;</span><br><span class="line">		fscanf(fp,&quot;%s%s%s%s&quot;,name,sex,tel,addr);//将fp所指的文件提取到name...</span><br><span class="line">		if(flag==0)&#123;</span><br><span class="line">			LinkList q=(LinkList)malloc(sizeof(LNode));//为q分配一个空间</span><br><span class="line">			strcpy(q-&gt;data.name,name);//copy到q所指结点</span><br><span class="line">			strcpy(q-&gt;data.sex,sex);</span><br><span class="line">			strcpy(q-&gt;data.tel,tel);</span><br><span class="line">			strcpy(q-&gt;data.addr,addr);</span><br><span class="line">			q-&gt;next=L-&gt;next;//头插法q查到L前面</span><br><span class="line">			L-&gt;next=q;</span><br><span class="line">			flag++;</span><br><span class="line">		&#125;else&#123;//第一个后进行直接插入排序</span><br><span class="line">		    temp = L;//temp指向L</span><br><span class="line">			LinkList q=(LinkList)malloc(sizeof(LNode));</span><br><span class="line">			strcpy(q-&gt;data.name,name);</span><br><span class="line">			strcpy(q-&gt;data.sex,sex);</span><br><span class="line">			strcpy(q-&gt;data.tel,tel);</span><br><span class="line">			strcpy(q-&gt;data.addr,addr);</span><br><span class="line"></span><br><span class="line">			while(temp-&gt;next != NULL)&#123;//当L中有元素时</span><br><span class="line">				if(strcmp(q-&gt;data.name,temp-&gt;next-&gt;data.name) &lt;= 0)&#123;//当q所指结点&lt;temp所指结点</span><br><span class="line">					q-&gt;next=temp-&gt;next;//q插到temp前面</span><br><span class="line">					temp-&gt;next=q;</span><br><span class="line">					flag2=1;//判断L插入没有</span><br><span class="line">					break;</span><br><span class="line">				&#125;else&#123;</span><br><span class="line">					temp = temp-&gt;next;////当q所指结点不&lt;temp所指结点temp指向下一个</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			if(flag2==0)&#123;//如果L没元素直接插入</span><br><span class="line">				q-&gt;next=temp-&gt;next;</span><br><span class="line">				temp-&gt;next=q;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">			fclose(fp);//关闭文件</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int cacu(LinkList p)//计算链表的长度</span><br><span class="line">&#123;</span><br><span class="line">	int n=0;</span><br><span class="line">	while(p)</span><br><span class="line">	&#123;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">		n++;</span><br><span class="line">	&#125;</span><br><span class="line">	return n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int display(LinkList L)//输出通讯录列表</span><br><span class="line">&#123;</span><br><span class="line">	LinkList p=L-&gt;next; //p指向L的第1个数据节点</span><br><span class="line">	if(!p)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t该通讯录为空!\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n\t\t******************************通讯录列表******************************\n&quot;);</span><br><span class="line">	printf(&quot;\t\t姓名\t\t性别\t\t手机号码\t\t单位\n&quot;);</span><br><span class="line">	printf(&quot;\t\t----------------------------------------------------------------------\n&quot;);</span><br><span class="line">	while(p)//遍历输出</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t%-16s%-16s%-16s%-20s\n&quot;,p-&gt;data.name,p-&gt;data.sex,p-&gt;data.tel, p-&gt;data.addr);</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">		printf(&quot;\t\t----------------------------------------------------------------------\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int arrange(LinkList L)//对通讯录进行排序</span><br><span class="line">&#123;</span><br><span class="line">	LinkList pre=L,p,q; //pre指向L的第1个数据节点</span><br><span class="line">	if(!pre)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t该通讯录为空!\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">    p=L-&gt;next-&gt;next;          //p指向L的第2个数据节点</span><br><span class="line">    L-&gt;next-&gt;next=NULL;       //构造只含有一个数据节点的有序表</span><br><span class="line">    while(p!=NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        q=p-&gt;next;             //q保存*p节点后继节点的指针</span><br><span class="line">        pre=L;         //从有序表开头进行比较</span><br><span class="line">        while(pre-&gt;next!=NULL&amp;&amp;strcmp(pre-&gt;next-&gt;data.name,p-&gt;data.name)&lt;=0)   //在有序表中查找*p插入的前驱节点*pre</span><br><span class="line">            pre=pre-&gt;next;</span><br><span class="line">        p-&gt;next=pre-&gt;next;      //将*p插入*pre之后</span><br><span class="line">        pre-&gt;next=p;</span><br><span class="line">        p=q;     //扫描原链表余下的节点</span><br><span class="line">    &#125;</span><br><span class="line">/*	n=cacu(p);</span><br><span class="line">	for(i=0;i&lt;n-1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(p=L-&gt;next,pre=L;p-&gt;next-&gt;next!=NULL;pre=p,p=p-&gt;next);</span><br><span class="line">		&#123;</span><br><span class="line">			k=p-&gt;next;</span><br><span class="line">			q=k-&gt;next;</span><br><span class="line">			if(strcmp(p-&gt;data.name,k-&gt;data.name)&gt;0)</span><br><span class="line">			&#123;</span><br><span class="line">				pre-&gt;next=k;</span><br><span class="line">				k-&gt;next=p;</span><br><span class="line">				p-&gt;next=q;</span><br><span class="line">				p=k;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;*/</span><br><span class="line">	display(L);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int cala(char *p)//计算字符串长度</span><br><span class="line">&#123;</span><br><span class="line">	int i,n=0;</span><br><span class="line">	for(i=0;p[i]!=&apos;\0&apos;;i++)n++;</span><br><span class="line">	return n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int Addpeo(LinkList L)//添加联系人</span><br><span class="line">&#123;</span><br><span class="line">	int t,n,a;</span><br><span class="line">	char flag=&apos;y&apos;,nm[15],te[100];//定义变量</span><br><span class="line">	LinkList p=L,q; //p指向L的头结点</span><br><span class="line">	while(p-&gt;next)p=p-&gt;next;//当p非空 //p指向p的下一个直到最后一个</span><br><span class="line">	while(flag!=&apos;n&apos;&amp;&amp;flag!=&apos;N&apos;)//判断是否要继续添加</span><br><span class="line">	&#123;</span><br><span class="line">		q=(LinkList)malloc(sizeof(LNode));//分配空间</span><br><span class="line">		p-&gt;next=q;//后插法</span><br><span class="line">		q-&gt;next=NULL;</span><br><span class="line">		p=q;</span><br><span class="line">		printf(&quot;\n\t\t请输入:\n&quot;);</span><br><span class="line">		printf(&quot;\t\t姓名:&quot;);//输入姓名</span><br><span class="line">	//	scanf(&quot;\t\t%s&quot;,nm);</span><br><span class="line">	/*scanf(&quot;\t\t%s&quot;,q-&gt;data.name);</span><br><span class="line">			p=L-&gt;next;</span><br><span class="line">		//	printf(&quot;\t\t请输入您要查询的联系人:&quot;);</span><br><span class="line">		//	scanf(&quot;\t\t%s&quot;,nm);</span><br><span class="line">			while(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				if(strcmp(p-&gt;data.name,nm)==0)&#123;</span><br><span class="line">					printf(&quot;\t\t您输入联系人存在:&quot;);</span><br><span class="line">				&#125;</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">			 &#125;</span><br><span class="line">		printf(&quot;\t\t姓名:&quot;);//输入姓名*/</span><br><span class="line">		scanf(&quot;\t\t%s&quot;,q-&gt;data.name);</span><br><span class="line">		printf(&quot;\t\t您输入联系人手机号:&quot;);</span><br><span class="line">		scanf(&quot;\t\t%s&quot;,te);</span><br><span class="line">					p=L-&gt;next;</span><br><span class="line">		//	printf(&quot;\t\t请输入您要查询的联系人:&quot;);</span><br><span class="line">		//	scanf(&quot;\t\t%s&quot;,nm);</span><br><span class="line">			while(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				if(strcmp(p-&gt;data.tel,te)==0)&#123;//判断输入联系人手机号是否存在</span><br><span class="line">					printf(&quot;\t\t您输入联系人手机号存在:&quot;);</span><br><span class="line">					printf(&quot;\t\t手机号码:&quot;);//输入手机号</span><br><span class="line">					scanf(&quot;\t\t%s&quot;,te);</span><br><span class="line">					p=L-&gt;next;</span><br><span class="line">				&#125;</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">			 &#125;</span><br><span class="line">		//printf(&quot;\t\t手机号码:&quot;);//输入手机号</span><br><span class="line">		//scanf(&quot;\t\t%s&quot;,q-&gt;data.tel);</span><br><span class="line">			strcpy(q-&gt;data.tel,te);</span><br><span class="line">		do//判断输入联系人手机号格式是否正确</span><br><span class="line">		&#123;</span><br><span class="line">			n=0;</span><br><span class="line">			if(cala(q-&gt;data.tel)!=11)</span><br><span class="line">			&#123;					</span><br><span class="line">				n=1;</span><br><span class="line">				printf(&quot;\t\t您输入的手机号码格式不存在,请重新输入:&quot;);</span><br><span class="line">				scanf(&quot;\t\t%s&quot;,q-&gt;data.tel);//正确输入</span><br><span class="line">			&#125;</span><br><span class="line">			else //判断输入联系人手机号是否是数字</span><br><span class="line">			&#123;</span><br><span class="line">				for(t=0;t&lt;11;t++)</span><br><span class="line">				&#123;</span><br><span class="line">					if(q-&gt;data.tel[t]&lt;&apos;0&apos;||q-&gt;data.tel[t]&gt;&apos;9&apos;)</span><br><span class="line">					&#123;</span><br><span class="line">						n=1;</span><br><span class="line">						printf(&quot;\t\t您输入的手机号码格式不合理,请重新输入:&quot;);</span><br><span class="line">						scanf(&quot;\t\t%s&quot;,q-&gt;data.tel);</span><br><span class="line">						break;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;while(n);</span><br><span class="line">		printf(&quot;\t\t性别:&quot;);//输入性别</span><br><span class="line">		scanf(&quot;\t\t%s&quot;,q-&gt;data.sex);</span><br><span class="line">		do//判断输入的是否为男或女</span><br><span class="line">		&#123;</span><br><span class="line">			a=0;</span><br><span class="line">			if(strcmp(q-&gt;data.sex,&quot;男&quot;)!=0 &amp;&amp; strcmp(q-&gt;data.sex,&quot;女&quot;)!=0)</span><br><span class="line">			&#123;</span><br><span class="line">				a=1;</span><br><span class="line">				printf(&quot;\t\t您输入的性别格式不合理,请重新输入:&quot;);</span><br><span class="line">				scanf(&quot;\t\t%s&quot;,q-&gt;data.sex);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;while(a);</span><br><span class="line">		printf(&quot;\t\t单位:&quot;);//输入地址</span><br><span class="line">		scanf(&quot;\t\t%s&quot;,q-&gt;data.addr);</span><br><span class="line">		arrange(L);</span><br><span class="line">		printf(&quot;\n\t\t是否继续添加?(Y/N)&quot;);      </span><br><span class="line">		scanf(&quot;\t\t%c&quot;,&amp;flag);  </span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int watch_over(LinkList L)//查询联系人</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	char m;</span><br><span class="line">	char flag=&apos;y&apos;,flag1=0;//定义判断变量</span><br><span class="line">	LinkList p=L-&gt;next;//p指向L的第一个数据</span><br><span class="line">	while(flag!=&apos;n&apos;&amp;&amp;flag!=&apos;N&apos;)//判断是否继续查询</span><br><span class="line">	&#123;</span><br><span class="line">		p=L-&gt;next;</span><br><span class="line">		printf(&quot;\n\t\t*************查询方式*************\n&quot;);</span><br><span class="line">		printf(&quot;\t\t┌-------------------------------┐\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│          1.查找姓名           │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│          2.查找手机号         │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t│          3.返回               │\n&quot;);</span><br><span class="line">		printf(&quot;\t\t└-------------------------------┘\n&quot;);</span><br><span class="line">		printf(&quot;\n\t\t请选择查询方式:&quot;);</span><br><span class="line">		scanf(&quot;\t\t%c&quot;,&amp;m);//选择查询方式</span><br><span class="line">		do</span><br><span class="line">		&#123;</span><br><span class="line">			n=0;</span><br><span class="line">			if(m!=&apos;1&apos;&amp;&amp;m!=&apos;2&apos;&amp;&amp;m!=&apos;3&apos;)</span><br><span class="line">			&#123;</span><br><span class="line">				n=1;</span><br><span class="line">				printf(&quot;\t\t您输入的查询方式不存在,请重新输入:&quot;);</span><br><span class="line">				scanf(&quot;\t\t%c&quot;,&amp;m);//选择查询方式</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;while(n);</span><br><span class="line">		if(!p)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;\t\t该通讯录为空!\n&quot;);</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">		if(&apos;1&apos;==m)</span><br><span class="line">		&#123;</span><br><span class="line">			char nm[15];</span><br><span class="line">			p=L-&gt;next;</span><br><span class="line">			printf(&quot;\t\t请输入您要查询的联系人:&quot;);</span><br><span class="line">			scanf(&quot;\t\t%s&quot;,nm);</span><br><span class="line">			while(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				if(strcmp(p-&gt;data.name,nm)==0)&#123;//遍历链表，检查姓名是否存在</span><br><span class="line">					printf(&quot;\t\t性别:%s\n&quot;,p-&gt;data.sex);</span><br><span class="line">					printf(&quot;\t\t手机号码:%s\n&quot;,p-&gt;data.tel);</span><br><span class="line">					printf(&quot;\t\t单位:%s\n&quot;,p-&gt;data.addr);</span><br><span class="line">					flag1=1;//存在附一</span><br><span class="line">				&#125;</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">			 &#125;</span><br><span class="line"></span><br><span class="line">			if(flag1==0)//查的不存在输出您要查询的联系人不存在</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;\t\t您要查询的联系人不存在!\n&quot;);</span><br><span class="line">				printf(&quot;\t\t是否继续查询?(Y/N)&quot;);</span><br><span class="line">				scanf(&quot;\t\t%c&quot;,&amp;flag);</span><br><span class="line">				return 0;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(&apos;2&apos;==m)</span><br><span class="line">		&#123;</span><br><span class="line">			char te[20];</span><br><span class="line">			p=L-&gt;next;</span><br><span class="line">			printf(&quot;\t\t请输入您要查询的手机号码:&quot;);</span><br><span class="line">			scanf(&quot;\t\t%s&quot;,te);</span><br><span class="line">			while(p!=NULL&amp;&amp;strcmp(p-&gt;data.tel,te)!=0)p=p-&gt;next;//遍历链表，检查电话是否存在</span><br><span class="line">			if(!p)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;\t\t您要查询的联系人不存在!\n&quot;);</span><br><span class="line">				printf(&quot;\t\t是否继续查询?(Y/N)&quot;);</span><br><span class="line">				scanf(&quot;\t\t%c&quot;,&amp;flag);</span><br><span class="line">				return 0;</span><br><span class="line">			&#125;</span><br><span class="line">			printf(&quot;\t\t姓名:%s\n&quot;,p-&gt;data.name);</span><br><span class="line">			printf(&quot;\t\t性别:%s\n&quot;,p-&gt;data.sex);</span><br><span class="line">			printf(&quot;\t\t电子邮箱:%s\n&quot;,p-&gt;data.addr);</span><br><span class="line">		&#125;</span><br><span class="line">		if(&apos;3&apos;==m)return 0;</span><br><span class="line">		printf(&quot;\t\t是否继续查询?(Y/N)&quot;);</span><br><span class="line">		scanf(&quot;\t\t%c&quot;,&amp;flag);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  int changeall(LinkList p)//修改某一联系人的所有信息</span><br><span class="line">&#123;</span><br><span class="line">	int n,t;</span><br><span class="line">	printf(&quot;\t\t姓名:&quot;);//输入姓名</span><br><span class="line">	scanf(&quot;\t\t%s&quot;,p-&gt;data.name);</span><br><span class="line">	printf(&quot;\t\t性别:&quot;);//输入性别</span><br><span class="line">	scanf(&quot;\t\t%s&quot;,p-&gt;data.sex);</span><br><span class="line">	printf(&quot;\t\t手机号码:&quot;);//输入手机号</span><br><span class="line">	scanf(&quot;\t\t%s&quot;,p-&gt;data.tel);</span><br><span class="line">	do</span><br><span class="line">	&#123;</span><br><span class="line">		n=0;</span><br><span class="line">		if(cala(p-&gt;data.tel)!=11)//判断手机格式</span><br><span class="line">		&#123;					</span><br><span class="line">			n=1;</span><br><span class="line">			printf(&quot;\t\t您输入的手机号码格式不存在,请重新输入:&quot;);</span><br><span class="line">			scanf(&quot;\t\t%s&quot;,p-&gt;data.tel);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			for(t=0;t&lt;11;t++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(p-&gt;data.tel[t]&lt;&apos;0&apos;||p-&gt;data.tel[t]&gt;&apos;9&apos;)//判断输入数值范围是否符合0~9</span><br><span class="line">				&#123;</span><br><span class="line">					n=1;</span><br><span class="line">					printf(&quot;\t\t您输入的手机号码格式不合理,请重新输入:&quot;);</span><br><span class="line">					scanf(&quot;\t\t%s&quot;,p-&gt;data.tel);</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;while(n);</span><br><span class="line">	printf(&quot;\t\t单位:&quot;);//输入地址</span><br><span class="line">	scanf(&quot;\t\t%s&quot;,p-&gt;data.addr);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int change(LinkList L)//修改联系人信息</span><br><span class="line">&#123;</span><br><span class="line">	char nm[20],flag=&apos;y&apos;;//定义变量指</span><br><span class="line">	LinkList p=L-&gt;next;</span><br><span class="line">	if(!p)//判断L是否为空</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t该通讯录为空!\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	while(flag!=&apos;n&apos;&amp;&amp;flag!=&apos;N&apos;)//判断是否继续修改</span><br><span class="line">	&#123;</span><br><span class="line">		p=L-&gt;next;</span><br><span class="line">		printf(&quot;\t\t请输入您想修改信息的联系人的姓名:&quot;);</span><br><span class="line">		scanf(&quot;\t\t%s&quot;,nm);</span><br><span class="line">		while(p!=NULL&amp;&amp;strcmp(p-&gt;data.name,nm)!=0)p=p-&gt;next;//遍历链表，检查要修改的姓名是否存在，要存在p指向他</span><br><span class="line">		if(!p)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;\t\t该联系人不存在!\n&quot;);</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;\t\t请输入您的修改:\n&quot;);</span><br><span class="line">			changeall(p);//调用chageall</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;\t\t是否继续修改?(Y/N)&quot;);</span><br><span class="line">		scanf(&quot;\t\t%c&quot;,&amp;flag);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int Delete(LinkList L)//删除个人信息</span><br><span class="line">&#123;</span><br><span class="line">	char nm[20];//定义变量</span><br><span class="line">	char flag=&apos;y&apos;;</span><br><span class="line">	LinkList p=L-&gt;next,bh,pre;</span><br><span class="line">	if(!p)//判断L是否为空</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t该通讯录为空!\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	while(flag!=&apos;n&apos;&amp;&amp;flag!=&apos;N&apos;)//判断是否继续删除</span><br><span class="line">	&#123;</span><br><span class="line">		p=L-&gt;next;</span><br><span class="line">		printf(&quot;\t\t请输入您要删除的联系人姓名:&quot;);</span><br><span class="line">		scanf(&quot;\t\t%s&quot;,nm);</span><br><span class="line">		while(p!=NULL&amp;&amp;strcmp(p-&gt;data.name,nm)!=0)//遍历链表，检查要删除的姓名是否存在，要存在p指向他</span><br><span class="line">		&#123;</span><br><span class="line">			pre=p;</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		if(!p)//当p指向L的结尾</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;\t\t该联系人不存在!\n&quot;);</span><br><span class="line">			printf(&quot;\t\t是否继续删除?(Y/N)&quot;);</span><br><span class="line">			scanf(&quot;\t\t%c&quot;,&amp;flag);</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">		bh=p-&gt;next;</span><br><span class="line">		if(p==L-&gt;next)L-&gt;next=bh;</span><br><span class="line">		else pre-&gt;next=bh;</span><br><span class="line">		printf(&quot;\t\t该联系人已删除!\n&quot;);</span><br><span class="line">		printf(&quot;\t\t是否继续删除?(Y/N)&quot;);</span><br><span class="line">		scanf(&quot;\t\t%c&quot;,&amp;flag);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int write(LinkList L)//将数据写入文件</span><br><span class="line">&#123;</span><br><span class="line">	LinkList p=L-&gt;next;//定义变量</span><br><span class="line">	FILE* fp;</span><br><span class="line">	char filename[30];</span><br><span class="line">	if(!p)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t该通讯录为空!&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\t\t写入到文件!\n&quot;);</span><br><span class="line">	printf(&quot;\t\t请输入所写入的文件名:&quot;);</span><br><span class="line">	scanf(&quot;\t\t%s&quot;,filename);</span><br><span class="line">	if((fp=fopen(filename,&quot;w+&quot;))==NULL)//打开文件并读写</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t无法打开文件!\n&quot;);</span><br><span class="line">		system(&quot;pause&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	//fprintf(fp,&quot;\n******************************通讯录列表******************************\n&quot;);</span><br><span class="line">	fprintf(fp,&quot;姓名\t\t性别\t\t手机号码\t\t单位\n&quot;);</span><br><span class="line">	//fprintf(fp,&quot;----------------------------------------------------------------------\n&quot;);</span><br><span class="line">	while(p)</span><br><span class="line">	&#123;</span><br><span class="line">		fprintf(fp,&quot;%-16s%-16s%-16s%-20s\n&quot;,p-&gt;data.name,p-&gt;data.sex,p-&gt;data.tel, p-&gt;data.addr);</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	//	fprintf(fp,&quot;----------------------------------------------------------------------\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	//fprintf(fp,&quot;\n******************************共%d个联系人******************************\n&quot;,cacu(L-&gt;next));</span><br><span class="line">	fclose(fp);                                         //关闭文件   </span><br><span class="line">	printf(&quot;\t\t写入成功!\n&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int readqu()//读取文件</span><br><span class="line">&#123;</span><br><span class="line">	char str[100], filename[30];//定义变量</span><br><span class="line">	FILE* fp;</span><br><span class="line">	printf(&quot;\t\t读取文件!\n&quot;);</span><br><span class="line">	printf(&quot;\t\t请输入所写入的文件名:&quot;);</span><br><span class="line">	scanf(&quot;\t\t%s&quot;,filename);</span><br><span class="line">	if((fp=fopen(filename,&quot;r&quot;))==NULL)//打开文件只读，如果文件为空输出无法打开文件</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\t\t无法打开文件!\n&quot;);</span><br><span class="line">		system(&quot;pause&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	while((fgets(str,100,fp))!=NULL)  //不为空输出</span><br><span class="line">    &#123;  </span><br><span class="line">		printf(&quot;\t\t%s&quot;,str);</span><br><span class="line">		printf(&quot;--------------------------------------------------------------------------------------------\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Printlist(LinkList L)&#123;</span><br><span class="line">	while(L-&gt;next != NULL)&#123;</span><br><span class="line">		printf(&quot;%s	%s	%s	%s\n&quot;,L-&gt;next-&gt;data.name,L-&gt;next-&gt;data.sex,L-&gt;next-&gt;data.tel,L-&gt;next-&gt;data.addr);</span><br><span class="line">		printf(&quot;----------------------------------------------------------------------\n&quot;);</span><br><span class="line">		L = L-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n\n*********************************文件读取成功***********************************************&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	LinkList L;</span><br><span class="line">	InitList(L);	//构造一个空的单链表L</span><br><span class="line">	for(;;)</span><br><span class="line">	&#123;</span><br><span class="line">		switch(menu_select())//调用功能选择框</span><br><span class="line">		&#123;</span><br><span class="line">		case 1:</span><br><span class="line">			printf(&quot;\n\t\t信息的导入\n&quot;); //信息的导入</span><br><span class="line">			read(L);</span><br><span class="line">			Printlist(L);</span><br><span class="line">			system(&quot;pause&quot;);//窗口保留</span><br><span class="line">			break;			</span><br><span class="line">		case 2:</span><br><span class="line">			printf(&quot;\n\t\t添加记录到通讯录\n&quot;); //添加记 录</span><br><span class="line">			Addpeo(L);</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 3:</span><br><span class="line">			printf(&quot;\n\t\t在通讯录中查找联系人\n&quot;);</span><br><span class="line">			watch_over(L);//查找联系人</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 4:</span><br><span class="line">			printf(&quot;\n\t\t从通讯录中删除联系人\n&quot;);</span><br><span class="line">			Delete(L);//删除联系人</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 5:</span><br><span class="line">			printf(&quot;\n\t\t修改通讯录中的信息\n&quot;);</span><br><span class="line">			change(L);//修改联系人</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 6:</span><br><span class="line">			printf(&quot;\n\t\t输出通讯录列表\n&quot;);</span><br><span class="line">			display(L);//输出通讯录列表</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 7:</span><br><span class="line">			printf(&quot;\n\t\t写入文件\n&quot;);</span><br><span class="line">			write(L);//写入文件</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 8:</span><br><span class="line">			printf(&quot;\n\t\t读取文件\n&quot;);</span><br><span class="line">			readqu();//读取文件</span><br><span class="line">			system(&quot;pause&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 0:    </span><br><span class="line">			printf(&quot;\n\t\t谢谢使用，再见!\n&quot;);  //结束程序    </span><br><span class="line">			printf(&quot;\n\t\t&quot;);    </span><br><span class="line">			system(&quot;pause&quot;);    </span><br><span class="line">			exit(0);    </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/06/利用单链表构建通讯录/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/线性表的插入删除/" class="archive-article-date">
-  	<time datetime="2019-10-06T09:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/06/线性表的插入删除/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线性表的插入删除</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/线性表的插入删除/">线性表的插入删除</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/线性表的一些操作/" class="archive-article-date">
-  	<time datetime="2019-10-06T09:35:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/线性表的一些操作/">线性表的一些操作</a>
-    </h1>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/10/06/利用单链表构建通讯录/", 
+    sourceId: "利用单链表构建通讯录",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/二叉树的创建/" class="archive-article-date">
-  	<time datetime="2019-10-06T09:28:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/二叉树的创建/">二叉树的创建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/05/算法设计与分析第一章答案/" class="archive-article-date">
-  	<time datetime="2019-10-05T10:48:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/05/算法设计与分析第一章答案/">算法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/25/算法时间复杂度分析/" class="archive-article-date">
-  	<time datetime="2019-09-25T08:22:45.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/19/hexo-不蒜子配置/" class="archive-article-date">
-  	<time datetime="2019-09-19T07:37:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/19/hexo-不蒜子配置/">hexo 不蒜子配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/18/hexo-配置的一些做法/" class="archive-article-date">
-  	<time datetime="2019-09-18T13:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/18/hexo-配置的一些做法/">hexo 配置的一些做法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/18/归并排序/" class="archive-article-date">
-  	<time datetime="2019-09-18T09:04:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/18/归并排序/">归并排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/17/linux修改命令行样式/" class="archive-article-date">
-  	<time datetime="2019-09-17T09:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/linux修改命令行样式/">linux修改命令行样式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -483,8 +373,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
