@@ -6,21 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>归并排序 | southwind</title>
+  <title>smith数 | southwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.算法设计**二路归并排序采用分而制之的方法，先将其一步步拆分">
+  <meta name="description" content="1.首先找到一个最小的质数k，最小的质数为2">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="归并排序">
-<meta property="og:url" content="http://yoursite.com/2019/09/18/归并排序/index.html">
+<meta property="og:title" content="smith数">
+<meta property="og:url" content="http://yoursite.com/2019/10/09/smith数/index.html">
 <meta property="og:site_name" content="southwind">
-<meta property="og:description" content="1.算法设计**二路归并排序采用分而制之的方法，先将其一步步拆分">
+<meta property="og:description" content="1.首先找到一个最小的质数k，最小的质数为2">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190918171032214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-09-18T10:49:35.371Z">
+<meta property="og:updated_time" content="2019-10-09T10:16:27.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归并排序">
-<meta name="twitter:description" content="1.算法设计**二路归并排序采用分而制之的方法，先将其一步步拆分">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190918171032214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="smith数">
+<meta name="twitter:description" content="1.首先找到一个最小的质数k，最小的质数为2">
   
     <link rel="alternative" href="/atom.xml" title="southwind" type="application/atom+xml">
   
@@ -170,20 +169,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-归并排序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-smith数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      归并排序
+      smith数
     </h1>
   
 
         
-        <a href="/2019/09/18/归并排序/" class="archive-article-date">
-  	<time datetime="2019-09-18T09:04:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
+        <a href="/2019/10/09/smith数/" class="archive-article-date">
+  	<time datetime="2019-10-09T10:12:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-09</time>
 </a>
         
         <span id="busuanzi_container_page_pv">   阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -191,85 +190,11 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-算法设计"><a href="#1-算法设计" class="headerlink" title="1.算法设计"></a>1.算法设计</h2><p>**二路归并排序采用分而制之的方法，先将其一步步拆分</p>
+        <p>1.首先找到一个最小的质数k，最小的质数为2</p>
 <a id="more"></a>
-<p>{2 5 3 6 1 4 7 8}   –先通过mergesort将数组拆分为单个元素<br>{2 5 3 6 }{1 4 7 8 }<br>{2 5 } {3 6} {1 4} {7 8}<br>{2}{5}{3}{6}{1}{4}{7}{8}<br>{2 5} {3 6} {1 4} {7 8}    –然后在通过merge合并<br>{2 3 5 6} {1 4 7 8}<br>{1 2 3 4 5 6 7 8}**</p>
-<h3 id="Mergesort算法"><a href="#Mergesort算法" class="headerlink" title="Mergesort算法"></a>Mergesort算法</h3><p>void mergesort(int a[],int i,int j){      //i指向left  j指向high<br>    int m;<br>    if(i!=j){<br>        m=(i+j)/2;<br>        mergesort(a,i,m);//递归调用mergesort<br>        mergesort(a,m+1,j);// 递归调用mergesort<br>        merge(a,i,j,m);//归并数组<br>}<br>}</p>
-<h3 id="归并算法："><a href="#归并算法：" class="headerlink" title="归并算法："></a>归并算法：</h3><p>void merge(int a[],int i,int j,int m)<br>{<br>    //创建一个辅助数组help<br>    int <em>help = (int *)malloc((j-i+1)</em>sizeof(int));//辅助数组长度等于a<br>    int p1=i;<br>    int p2=m+1;<br>    while(p1&lt;=m&amp;&amp;p2&lt;=j){<br>        help[i++]=a[p1]&lt;a[p2]?a[p1++]:a[p2++];//将左右区域较小元素放进help，有可能有的区域没有完全放入help<br>}<br>//下面两个循环只能运行一个，<br>while(p1&lt;=m){<br>        help[i++]=a[p1++];<br>}<br>while(p2&lt;=j){<br>        help[i++]=a[p2++];<br>}<br>for(int n=0;n&lt;;n++){      //将help中的数据copy到a中<br>    a[n]=help[n];<br>}<br>}</p>
-<h2 id="2-程序清单"><a href="#2-程序清单" class="headerlink" title="2.程序清单"></a>2.程序清单</h2><pre><code>#include&lt;cstdio&gt;
-#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-using namespace std;
+<p>2.如果这个质因数k等于n那么分解过程就结束了<br>3.如果k不等于n,但是n可以被k整除，那么输出这个k，并用n/k（n除以k）作为n的新值，并重复步骤2（用循环）<br>4.如果n不能被k整除，那么是k=k+1; 重复执行第2步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int sum(int n)&#123;</span><br><span class="line">	int m = 0,s = 0;</span><br><span class="line">	while(n != 0)&#123;</span><br><span class="line">		m = n%10;</span><br><span class="line">		n = n/10;</span><br><span class="line">		s += m;</span><br><span class="line">	&#125;</span><br><span class="line">	return s;</span><br><span class="line">&#125;</span><br><span class="line">int isSmith(int n)&#123;</span><br><span class="line">	int k,s1 = 0,s2 = 0;</span><br><span class="line">	int num[1000],x = 0;</span><br><span class="line">	s1 = sum(n);</span><br><span class="line">	//int a[100];</span><br><span class="line">	//printf(&quot;%d = &quot;,n);</span><br><span class="line">	for(k=2;k&lt;n;k++)//给k值赋值一个最小的质数2		</span><br><span class="line">	&#123;</span><br><span class="line">		while(n!=k&amp;&amp;n%k==0)</span><br><span class="line">		&#123;</span><br><span class="line">                num[x] = k;</span><br><span class="line">                x++;</span><br><span class="line">                n /= k;</span><br><span class="line">                //break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    num[x] = n;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    for(int i = 0; i &lt;= x; i++) &#123;</span><br><span class="line">		//printf(&quot;%d\n&quot;,num[i]);</span><br><span class="line">        s2 += sum(num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">	if(s1 == s2)&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">		return 0;</span><br><span class="line">&#125;</span><br><span class="line">int isPrime(int x) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    int i,num = 1;</span><br><span class="line">    for(i = 2; i &lt; x; i++) &#123;</span><br><span class="line">        if( x % i == 0) &#123;</span><br><span class="line">            num = -1;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(num == 1)</span><br><span class="line">        return 1;</span><br><span class="line">    else</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int n;</span><br><span class="line">	int flog = 0;</span><br><span class="line">	printf(&quot;输入样式:\n&quot;);</span><br><span class="line">	while(scanf(&quot;%d&quot;,&amp;n) &amp;&amp; n != 0)&#123;</span><br><span class="line">		//printf(&quot;输出%d:\n&quot;,&amp;s1);</span><br><span class="line">		flog = 0;</span><br><span class="line">		for(int i = n+1;;i++)&#123;</span><br><span class="line">			if(isSmith(i))&#123;</span><br><span class="line">				printf(&quot;输出样式:\n&quot;);</span><br><span class="line">				printf(&quot;%d\n&quot;,i);</span><br><span class="line">				printf(&quot;输入样式:\n&quot;);</span><br><span class="line">				flog++;</span><br><span class="line">			&#125;</span><br><span class="line">			if(flog == 1)</span><br><span class="line">				break;</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-void merge(int a[],int l,int r,int mid)
-{
-    //创建一个辅助数组help
-    int *help = (int *)malloc((r-l+1)*sizeof(int));
-    //int help[8];//辅助数组长度等于a
-    int p1=l;
-    int p2=mid+1;
-    int k=0;
-    while(p1&lt;=mid&amp;&amp;p2&lt;=r){
-        if(a[p1]&lt;=a[p2])
-            help[k++]=a[p1++];
-        else
-            help[k++]=a[p2++];
-}
-//下面两个循环只能运行一个，
-while(p1&lt;=mid){
-        help[k++]=a[p1++];
-}
-while(p2&lt;=r){
-        help[k++]=a[p2++];
-}
-for(int n=0;n&lt;(r-l+1);n++)    //将help中的数据copy到a中
-    a[l+n]=help[n];
-
-free(help);
-}
-
-
-
-void merge_sort(int a[],int l,int r)
-{
-    if(l!=r){
-    int mid=(l+r)/2;
-
-    merge_sort(a,l,mid);
-    merge_sort(a,mid+1,r);
-    merge(a,l,r,mid);    
-    }
-}
-
-
-void mergesort(int a[],int l,int r)
-{
-    merge_sort(a,l,r-1);
-}
-
-int main()
-{
-    int size,i;
-    printf(&quot;请输入要创建的数组长度：\n&quot;);
-    scanf(&quot;%d&quot;,&amp;size);
-    int *a = (int*)malloc(size*sizeof(int));
-    //根据需求动态创建数组
-
-    //int a[8],i;
-    printf(&quot;输入长度为%d的数组\n&quot;,size);
-    for(i=0;i&lt;size;i++)
-    scanf(&quot;%d&quot;,&amp;a[i]);
-
-    mergesort(a,0,size);
-
-    for(i=0;i&lt;size;i++)
-    printf(&quot;%d &quot;,a[i]);
-
-
-    return 0;
- } </code></pre><h2 id="3-运行结果"><a href="#3-运行结果" class="headerlink" title="3.运行结果"></a>3.运行结果</h2><p><img src="https://img-blog.csdnimg.cn/20190918171032214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZfeF9pX2Ffb19sX2lfbl9nXw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="4．算法复杂度分析"><a href="#4．算法复杂度分析" class="headerlink" title="4．算法复杂度分析"></a>4．算法复杂度分析</h2><p>设调用mergesort的执行时间为T（n），由执行过程可知以下递归关系，<br>T(n)=O(1)      当n=1<br>T(n)=2T(n/2)+O(n)<br>其中O(n)为merge所需的时间，设cn（c为正常量）。因此<br>T(n)=2T(n/2)+cn=2(2T(n/4) +cn/2)+cn=2^2T(n/4)+2cn<br>=2^3T(n/2^3)+3cn<br>…<br>=2^kT(n/2^k)+kcn<br>=nO（1）+cnlog2n=n+cnlog2n<br>=O(nlog2n)</p>
 
       
 
@@ -304,6 +229,17 @@ int main()
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -354,7 +290,7 @@ int main()
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/18/归并排序/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/09/smith数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -368,18 +304,9 @@ int main()
   
 <nav id="article-nav">
   
-    <a href="/2019/09/18/hexo-配置的一些做法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo 配置的一些做法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/17/linux修改命令行样式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">linux修改命令行样式</div>
+    <a href="/2019/10/06/利用单链表构建通讯录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用单链表构建通讯录</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -406,7 +333,7 @@ int main()
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-算法设计"><span class="toc-number">1.</span> <span class="toc-text">1.算法设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mergesort算法"><span class="toc-number">1.1.</span> <span class="toc-text">Mergesort算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归并算法："><span class="toc-number">1.2.</span> <span class="toc-text">归并算法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-程序清单"><span class="toc-number">2.</span> <span class="toc-text">2.程序清单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-运行结果"><span class="toc-number">3.</span> <span class="toc-text">3.运行结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4．算法复杂度分析"><span class="toc-number">4.</span> <span class="toc-text">4．算法复杂度分析</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -423,8 +350,8 @@ int main()
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/09/18/归并排序/", 
-    sourceId: "归并排序",
+    url: "http://yoursite.com/2019/10/09/smith数/", 
+    sourceId: "smith数",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
