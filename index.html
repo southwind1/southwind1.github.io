@@ -166,19 +166,19 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-求串s1,s2最长公共子串长度" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/求串s1,s2最长公共子串长度/">laibi</a>
+      <a class="article-title" href="/2019/11/21/1/">laibi</a>
     </h1>
   
 
         
-        <a href="/2019/11/21/求串s1,s2最长公共子串长度/" class="archive-article-date">
+        <a href="/2019/11/21/1/" class="archive-article-date">
   	<time datetime="2019-11-21T10:03:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
         
@@ -187,12 +187,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>����һ����s1,s2������Ӵ�����<br>���������s����ظ��Ӵ�<br>����������s1,s2����������г���<br>ע�������ַ������������������������Ӵ�������ǰ���ַ�֮�䲻һ��������һ��ģ��������Ӵ�����Ҫ����һ�顣�����ַ���1��ABCAB���ַ���2��ADEBCFA�����������ַ����������������ΪABCA��������Ӵ��ǣ�BC</p>
-<p>�����������ⶼ����������ѭ��������� ʱ�临�Ӷ�ΪO��n3�������ʹ�ö�̬�滮����ô���԰Ѹ��ӶȽ�ΪO��n2��</p>
-<h5 id="��������һ"><a href="#��������һ" class="headerlink" title="��������һ"></a>��������һ</h5><p>���������ַ����ֱ�Ϊs��t��s[i]��t[j]�ֱ��ʾ���i�͵�j���ַ�(�ַ�˳���0��ʼ)����L[i, j]��ʾ��s[i]��t[j]Ϊ��β����ͬ�Ӵ�����󳤶ȡ�Ӧ�ò��ѵ��Ƴ�L[i, j]��L[i+1,j+1]֮��Ĺ�ϵ����Ϊ������ʵֻ��s[i+1]��t[j+1]��һ���ַ�����s[i+1]��t[j+1]��ͬ����ôL[i+1, j+1]��ȻӦ����0����Ϊ�κ�������Ϊ��β���Ӵ�����������ȫ��ͬ�������s[i+1]��t[j+1]��ͬ����ô��ֻҪ����s[i]��t[j]��β�����ͬ�Ӵ�֮��ֱ������������ַ����ɣ������Ϳ����ó�������һλ���ϲ��������������Ҳ�͵õ�L[i+1,j+1]=(s[i]==t[j]?L[i,j]+1:0)�����Ĺ�ϵ��������ҪС�ĵľ����ٽ�λ��</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int l,r;</span><br><span class="line">int max;</span><br><span class="line">void dnap(char str1[],char str2[])</span><br><span class="line">&#123;</span><br><span class="line">	int str1_l = strlen((str1));</span><br><span class="line">	int str2_l = strlen((str2));</span><br><span class="line">	//int len = str1_l &gt; str2_l ? str1_l : str2_l; </span><br><span class="line">	int f[str1_l][str2_l];</span><br><span class="line">	for (int i = 0; i &lt; str2_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		if(str2[i] == str1[0])</span><br><span class="line">			f[0][i] = 1;</span><br><span class="line">		else</span><br><span class="line">			f[0][i] = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	for (int i = 0; i &lt; str1_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		if(str1[i] == str2[0])</span><br><span class="line">			f[i][0] = 1;</span><br><span class="line">		else</span><br><span class="line">			f[i][0] = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt; str1_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = 1; j &lt; str2_l; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			if(str1[i] == str2[j])</span><br><span class="line">				f[i][j] = f[i - 1][j - 1] + 1;</span><br><span class="line">			else</span><br><span class="line">				f[i][j] = 0;</span><br><span class="line">			if(max &lt; f[i][j])</span><br><span class="line">			&#123;</span><br><span class="line">				max = f[i][j];</span><br><span class="line">				l = i;</span><br><span class="line">				r = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str1[100] = &quot;abcd441abcd23&quot;;</span><br><span class="line">	char str2[100] = &quot;eacd441abcd2w&quot;; </span><br><span class="line">	printf(&quot;%s\n&quot;, str1);</span><br><span class="line">	printf(&quot;%s\n&quot;, str2);</span><br><span class="line">	max = 0;</span><br><span class="line">	l = 0;</span><br><span class="line">	r = 0;</span><br><span class="line">	printf(&quot;*************************************\n&quot;);</span><br><span class="line">	dnap(str1,str2);</span><br><span class="line">	printf(&quot;��һ���ַ�����ظ��Ӵ��±�%d~~%d\n&quot;,l - max + 1,l);</span><br><span class="line">	printf(&quot;�ڶ����ַ�����ظ��Ӵ��±�%d~~%d\n&quot;,r - max + 1,r);</span><br><span class="line">	printf(&quot;��ظ��Ӵ�����%d\n&quot;,max);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <p>����һ����s1,s2������Ӵ�����</p>
+        
+          <a class="article-more-a" href="/2019/11/21/1/#more">more >></a>
+        
       
 
       
@@ -215,7 +213,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/21/求串s1,s2最长公共子串长度/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/21/1/">展开全文 >></a>
         </p>
       
 
@@ -985,19 +983,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">dataStructure</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">�㷨</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">dataStructure</a>
               </li>
             
             <div class="clearfix"></div>
