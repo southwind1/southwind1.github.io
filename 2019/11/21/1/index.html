@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>laibi | southwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="����һ����s1,s2������Ӵ�����">
-<meta name="keywords" content="�㷨">
+  <meta name="description" content="问题一：求串s1,s2最长公共子串长度">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="laibi">
 <meta property="og:url" content="http://yoursite.com/2019/11/21/1/index.html">
 <meta property="og:site_name" content="southwind">
-<meta property="og:description" content="����һ����s1,s2������Ӵ�����">
+<meta property="og:description" content="问题一：求串s1,s2最长公共子串长度">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-21T11:38:17.983Z">
+<meta property="og:updated_time" content="2019-11-21T11:43:56.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laibi">
-<meta name="twitter:description" content="����һ����s1,s2������Ӵ�����">
+<meta name="twitter:description" content="问题一：求串s1,s2最长公共子串长度">
   
     <link rel="alternative" href="/atom.xml" title="southwind" type="application/atom+xml">
   
@@ -190,12 +190,12 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>����һ����s1,s2������Ӵ�����</p>
+        <p>问题一：求串s1,s2最长公共子串长度</p>
 <a id="more"></a>
-<p>���������s����ظ��Ӵ�<br>����������s1,s2����������г���<br>ע�������ַ������������������������Ӵ�������ǰ���ַ�֮�䲻һ��������һ��ģ��������Ӵ�����Ҫ����һ�顣�����ַ���1��ABCAB���ַ���2��ADEBCFA�����������ַ����������������ΪABCA��������Ӵ��ǣ�BC</p>
-<p>�����������ⶼ����������ѭ��������� ʱ�临�Ӷ�ΪO��n3�������ʹ�ö�̬�滮����ô���԰Ѹ��ӶȽ�ΪO��n2��</p>
-<h5 id="��������һ"><a href="#��������һ" class="headerlink" title="��������һ"></a>��������һ</h5><p>���������ַ����ֱ�Ϊs��t��s[i]��t[j]�ֱ��ʾ���i�͵�j���ַ�(�ַ�˳���0��ʼ)����L[i, j]��ʾ��s[i]��t[j]Ϊ��β����ͬ�Ӵ�����󳤶ȡ�Ӧ�ò��ѵ��Ƴ�L[i, j]��L[i+1,j+1]֮��Ĺ�ϵ����Ϊ������ʵֻ��s[i+1]��t[j+1]��һ���ַ�����s[i+1]��t[j+1]��ͬ����ôL[i+1, j+1]��ȻӦ����0����Ϊ�κ�������Ϊ��β���Ӵ�����������ȫ��ͬ�������s[i+1]��t[j+1]��ͬ����ô��ֻҪ����s[i]��t[j]��β�����ͬ�Ӵ�֮��ֱ������������ַ����ɣ������Ϳ����ó�������һλ���ϲ��������������Ҳ�͵õ�L[i+1,j+1]=(s[i]==t[j]?L[i,j]+1:0)�����Ĺ�ϵ��������ҪС�ĵľ����ٽ�λ��</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int l,r;</span><br><span class="line">int max;</span><br><span class="line">void dnap(char str1[],char str2[])</span><br><span class="line">&#123;</span><br><span class="line">	int str1_l = strlen((str1));</span><br><span class="line">	int str2_l = strlen((str2));</span><br><span class="line">	//int len = str1_l &gt; str2_l ? str1_l : str2_l; </span><br><span class="line">	int f[str1_l][str2_l];</span><br><span class="line">	for (int i = 0; i &lt; str2_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		if(str2[i] == str1[0])</span><br><span class="line">			f[0][i] = 1;</span><br><span class="line">		else</span><br><span class="line">			f[0][i] = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	for (int i = 0; i &lt; str1_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		if(str1[i] == str2[0])</span><br><span class="line">			f[i][0] = 1;</span><br><span class="line">		else</span><br><span class="line">			f[i][0] = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt; str1_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = 1; j &lt; str2_l; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			if(str1[i] == str2[j])</span><br><span class="line">				f[i][j] = f[i - 1][j - 1] + 1;</span><br><span class="line">			else</span><br><span class="line">				f[i][j] = 0;</span><br><span class="line">			if(max &lt; f[i][j])</span><br><span class="line">			&#123;</span><br><span class="line">				max = f[i][j];</span><br><span class="line">				l = i;</span><br><span class="line">				r = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str1[100] = &quot;abcd441abcd23&quot;;</span><br><span class="line">	char str2[100] = &quot;eacd441abcd2w&quot;; </span><br><span class="line">	printf(&quot;%s\n&quot;, str1);</span><br><span class="line">	printf(&quot;%s\n&quot;, str2);</span><br><span class="line">	max = 0;</span><br><span class="line">	l = 0;</span><br><span class="line">	r = 0;</span><br><span class="line">	printf(&quot;*************************************\n&quot;);</span><br><span class="line">	dnap(str1,str2);</span><br><span class="line">	printf(&quot;��һ���ַ�����ظ��Ӵ��±�%d~~%d\n&quot;,l - max + 1,l);</span><br><span class="line">	printf(&quot;�ڶ����ַ�����ظ��Ӵ��±�%d~~%d\n&quot;,r - max + 1,r);</span><br><span class="line">	printf(&quot;��ظ��Ӵ�����%d\n&quot;,max);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>问题二：求串s的最长重复子串<br>问题三：求串s1,s2最长公共子序列长度<br>注：两个字符串的最长公共子序列与最长公共子串区别是前者字符之间不一定是连在一块的，而公共子串必须要连在一块。比如字符串1：ABCAB；字符串2：ADEBCFA，则这两个字符串的最长公共子序列为ABCA，最长公共子串是：BC</p>
+<p>以上三个问题都可以用三层循环求出，但 时间复杂度为O（n3），如果使用动态规划，那么可以把复杂度降为O（n2）</p>
+<h5 id="对于问题一"><a href="#对于问题一" class="headerlink" title="对于问题一"></a>对于问题一</h5><p>假设两个字符串分别为s和t，s[i]和t[j]分别表示其第i和第j个字符(字符顺序从0开始)再令L[i, j]表示以s[i]和t[j]为结尾的相同子串的最大长度。应该不难递推出L[i, j]和L[i+1,j+1]之间的关系，因为两者其实只差s[i+1]和t[j+1]这一对字符。若s[i+1]和t[j+1]不同，那么L[i+1, j+1]自然应该是0，因为任何以它们为结尾的子串都不可能完全相同；而如果s[i+1]和t[j+1]相同，那么就只要在以s[i]和t[j]结尾的最长相同子串之后分别添上这两个字符即可，这样就可以让长度增加一位。合并上述两种情况，也就得到L[i+1,j+1]=(s[i]==t[j]?L[i,j]+1:0)这样的关系。最后就是要小心的就是临界位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int l,r;</span><br><span class="line">int max;</span><br><span class="line">void dnap(char str1[],char str2[])</span><br><span class="line">&#123;</span><br><span class="line">	int str1_l = strlen((str1));</span><br><span class="line">	int str2_l = strlen((str2));</span><br><span class="line">	//int len = str1_l &gt; str2_l ? str1_l : str2_l; </span><br><span class="line">	int f[str1_l][str2_l];</span><br><span class="line">	for (int i = 0; i &lt; str2_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		if(str2[i] == str1[0])</span><br><span class="line">			f[0][i] = 1;</span><br><span class="line">		else</span><br><span class="line">			f[0][i] = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	for (int i = 0; i &lt; str1_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		if(str1[i] == str2[0])</span><br><span class="line">			f[i][0] = 1;</span><br><span class="line">		else</span><br><span class="line">			f[i][0] = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt; str1_l; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = 1; j &lt; str2_l; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			if(str1[i] == str2[j])</span><br><span class="line">				f[i][j] = f[i - 1][j - 1] + 1;</span><br><span class="line">			else</span><br><span class="line">				f[i][j] = 0;</span><br><span class="line">			if(max &lt; f[i][j])</span><br><span class="line">			&#123;</span><br><span class="line">				max = f[i][j];</span><br><span class="line">				l = i;</span><br><span class="line">				r = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str1[100] = &quot;abcd441abcd23&quot;;</span><br><span class="line">	char str2[100] = &quot;eacd441abcd2w&quot;; </span><br><span class="line">	printf(&quot;%s\n&quot;, str1);</span><br><span class="line">	printf(&quot;%s\n&quot;, str2);</span><br><span class="line">	max = 0;</span><br><span class="line">	l = 0;</span><br><span class="line">	r = 0;</span><br><span class="line">	printf(&quot;*************************************\n&quot;);</span><br><span class="line">	dnap(str1,str2);</span><br><span class="line">	printf(&quot;第一个字符串最长重复子串下标%d~~%d\n&quot;,l - max + 1,l);</span><br><span class="line">	printf(&quot;第二个字符串最长重复子串下标%d~~%d\n&quot;,r - max + 1,r);</span><br><span class="line">	printf(&quot;最长重复子串长度%d\n&quot;,max);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -236,7 +236,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">�㷨</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#��������һ"><span class="toc-number">1.</span> <span class="toc-text">��������һ</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#对于问题一"><span class="toc-number">1.</span> <span class="toc-text">对于问题一</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -461,19 +461,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">�㷨</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">dataStructure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
